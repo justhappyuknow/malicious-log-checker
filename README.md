@@ -17,6 +17,12 @@ The Malicious Log Checker is a Python tool designed to analyze real system log f
    git clone https://github.com/dhawalbisht/malicious-log-checker.git
    cd malicious-log-checker
    pip install -r requirements.txt
-   python src/main.py
+   
+# Export Application log
+Get-EventLog -LogName Application | Export-Csv -Path "C:\path\to\log1.log" -NoTypeInformation
 
+# Export System log
+Get-EventLog -LogName System | Export-Csv -Path "C:\path\to\log2.log" -NoTypeInformation
 
+```bash
+python src/main.py
